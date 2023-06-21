@@ -1,0 +1,483 @@
+/* ***************************************** */
+/* common css srarts here */
+/* ***************************************** */
+
+/* google font here link  */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root{
+    --c-brand: #f86300;
+    --c-dark:#333;
+    --c-body:#666;
+    --font-base: 'Plus Jakarta Sans', sans-serif;
+    --n-height: 100px;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--c-body);
+    font-family: var(--font-base);
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--c-dark);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+a{
+    color: var(--c-dark);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+a:hover{
+    color: var(--c-brand);
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+section{
+    padding: 140px 0;
+    background-color: aliceblue;
+}
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.btn{
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--c-brand);
+    font-family: var(--font-base);
+    padding: 16px 34px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+}
+.btn:hover{
+    background-color: var(--c-brand);
+    color: white;
+}
+
+.heading-xl{
+    font-size: clamp(40px, 10vw, 100px);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.heading-1{
+    font-size: clamp(32px, 6vw, 54px);
+}
+.heading-2{
+    font-size: clamp(25px, 4vw, 40px);
+    font-weight: 600;
+    color: #1F1D36;
+}
+.heading-3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+/* ***************************************** */
+/* common css ends here */
+/* ***************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ***************************************** */
+/* navbar starts here */
+/* ***************************************** */
+
+.navbar{
+    background-color: rgba(255, 255, 255, 0.829);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    height: var(--n-height);
+    display: flex;
+}
+.navbar .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand-logo{
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    font-family: var(--font-base);
+    font-weight: 800;
+}
+.nav-link{
+    display: flex;
+}
+.nav-link li:not(:last-child){
+    margin-right: 44px;
+}
+
+.nav-link li.active a{
+    box-shadow: 0 1px var(--c-brand);
+}
+.nav-link a{
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease-in-out;
+    font-weight: 550;
+}
+.nav-link li a:hover{
+    color: var(--c-brand);
+    box-shadow: 0 1px;
+    
+}
+
+.hamburger{
+    display: block;
+    cursor: pointer;
+    display: none;
+}
+.hamburger span{
+    display: block;
+    width: 29px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    margin: 8px auto;
+    transition: all 0.4s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1){
+    transform: translateY(5px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2){
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+.scrolled{
+    background-color: rgb(248, 248, 248);
+    transition: all 0.4s ease-in-out;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    color: black;
+}
+.scrolled .brand-logo{
+    color: var(--c-dark);
+}
+.scrolled .nav-link li a{
+    color: var(--c-dark);
+}
+.scrolled .nav-link li a:hover{
+    color: var(--c-brand);
+}
+.scrolled .hamburger span{
+    background-color: var(--c-dark);
+}
+
+/* ***************************************** */
+/* navbar ends here */
+/* ***************************************** */
+
+
+
+
+
+
+/* ********************************************* */
+/* banner starts here */
+/* ********************************************* */
+
+#hero{
+    min-height: 100vh;
+    background-image: url(../image/hero-1.jpg);
+    background-color: #1d1a1a70;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    background-position: center;
+    text-align: center;
+}
+#hero h1{
+    color: rgb(245, 242, 242);
+}
+
+@keyframes scrolltodown{
+    0%{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-30%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(60%);
+        opacity: 0;
+    }
+}
+
+.scrollToDown{
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+    color: white;
+    border: 2px solid #979595b6;
+    border-radius: 100px;
+    cursor: pointer;
+    left: 50%;
+    bottom: 48px;
+}
+.scrollToDown .las{
+    animation: scrolltodown 2s ease infinite;
+}
+
+/* ********************************************* */
+/* banner ends here */
+/* ********************************************* */
+
+
+
+
+
+
+/* ******************************************** */
+/* our service starts here */
+/* ******************************************** */
+#service{
+    background-color: white;
+}
+
+.section-intro{
+    margin-bottom: 44px;
+}
+.grid{
+    display: grid;
+    gap: 44px;
+}
+.three-col-grid{
+    grid-template-columns: repeat(3, 1fr);
+}
+/* .service:nth-child(odd){
+    background-color: #ececec;
+} */
+.service{
+    padding: 44px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+   
+}
+.service p{
+    font-size: 14px;
+}
+.service .icon{
+    font-size: 38px;
+    color: #0A2647;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.service .icon:hover{
+    color: #f86300;
+}
+
+
+/* ******************************************** */
+/* our service ends here */
+/* ******************************************** */
+
+
+
+
+
+
+/* ******************************************** */
+/* Our recent work starts here */
+/* ******************************************** */
+
+.two-col-grid{
+    grid-template-columns: repeat(2, 1fr);
+}
+#work .project{
+    position: relative;
+    overflow: hidden;
+}
+#work .project img{
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease-in-out;
+    border-radius: 5px;
+}
+
+
+#work .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4e4d4da6;
+    padding: 44px;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+#work .project:hover .overlay{
+    opacity: 1;
+    visibility: visible;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#work .project:hover img{
+    transform: rotate(15deg) scale(1.5);
+    border-radius: 5px;
+}
+
+#work .overlay h2{
+    margin-top: 85px;
+}
+
+#work .overlay h2{
+    color: white;
+}
+#work .overlay p{
+    color: rgb(238, 238, 238);
+    font-size: 16px;
+}
+
+/* ******************************************** */
+/* Our recent work ends here */
+/* ******************************************** */
+
+
+
+
+
+
+
+/* ******************************************** */
+/* blog starts here */
+/* ******************************************** */
+#blog{
+    background-color: #eeeeee;
+}
+.blog-post img{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 3px;
+}
+.blog-post h3{
+    margin-top: 16px ;
+}
+
+/* ******************************************** */
+/* blog ends here */
+/* ******************************************** */
+
+
+
+
+
+
+/* ******************************************** */
+/* contact us starts here */
+/* ******************************************** */
+#contact{
+    background-color: white;
+}
+
+#contact .grid{
+    grid-template-columns: 1fr 2.5fr;
+}
+.contact-widget{
+    margin-bottom: 44px;
+}
+
+form{
+    width: 100%;
+}
+.form-group{
+    margin-bottom: 24px;
+}
+.form-group .form-input{
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #cccc;
+}
+
+.form-group .form-input:focus{
+    outline: none;
+}
+
+/* ******************************************** */
+/* contact us ends here */
+/* ******************************************** */
+
+
+
+
+/* footer */
+
+footer{
+    padding: 20px  ;
+    background-color: #000000;
+    text-align: center;
+
+}
+footer .container{
+    text-align: center;
+    
+}
+
+footer p{
+    color: white;
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+footer a:not(:last-child) {
+    margin-right: 24px;
+}
+footer a{
+    font-size: 25px;
+}
+
+
+
